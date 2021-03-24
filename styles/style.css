@@ -1,0 +1,22 @@
+.product-img {
+  width: 70%;
+  margin-bottom: 2em;
+}
+
+.price {
+  margin-top: 1em;
+}
+
+#total-products-number {
+  color: white;
+  margin-left: 0.5em;
+  margin-right: 1em;
+}
+
+#total-products-text {
+  color: gray;
+}
+
+.form-horizontal {
+  margin: 2em 1em;
+}
