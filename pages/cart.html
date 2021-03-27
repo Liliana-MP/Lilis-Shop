@@ -71,41 +71,42 @@
       </tfoot>
     </table>
 
-    <!--Det är bara telefonnummer som funkar hittils, poppar upp en varningsruta att man skrivit fel format-->
+    
 
-    <form action="confirmed-order.html" class="form-horizontal">
+    <form action="confirmed-order.html" class="form-horizontal" name="input-form" onsubmit="return(checkOutCart());">
+     
+      <div id="alertBox"></div>
       <label for="nameTextBox">Name, minimum 2 letters</label><br />
       <input
         type="text"
         id="nameTextBox"
         name="name"
-        minlength="2"
-        required
+        
       /><br /><br />
+
       <label for="numberTextBox">Phone number</label><br />
       <input
-        type="tel"
+        type="text"
         id="numberTextBox"
         name="number"
-        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-        required
-      /><small> Format: xxx-xxx-xxxx</small> <br /><br />
+        
+      /> <br /><br />
 
       <label for="emailBox">Email</label><br />
-      <input type="email" id="emailBox" name="email" required />
+      <input type="text" id="emailBox" name="email" />
       <small> Format: test@email.com</small> <br /><br />
 
       <label for="addressBox">Address</label><br />
-      <input type="text" id="addressBox" name="address" minlength="2" required />
+      <input type="text" id="addressBox" name="address"  />
       <small> Address</small><br /><br />
 
-      <input type="tel"  name="address" pattern="[0-9]{3}-[0-9]{2}" required />
-      <small> Zipcode Format: xxx-xx</small><br /><br />
+      <input type="text" id="zipcodeBox"  name="address" />
+      <small> Zipcode </small><br /><br />
 
-      <input type="text"  name="address" minlength="2" required />
+      <input type="text" id="cityBox"  name="address" />
       <small>City</small><br /><br />
 
-      <input type="submit" class="btn btn-primary" onclick="emptyCart()" />
+      <input type="submit" class="btn btn-primary"  />
     </form>
 
 

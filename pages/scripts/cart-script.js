@@ -7,8 +7,6 @@ function render(){
     if (myArrayFromLS == null) {
         myArrayFromLS = [];
       }
-
-    console.log(myArrayFromLS);
     
     myArrayFromLS.forEach(element => {
 
@@ -68,20 +66,128 @@ function render(){
     productsFromLs.forEach(element => {
       sum += element.price;
     })
-    console.log(sum);
+  
 
     document.getElementById("total-price").innerHTML += sum + " €";
 
   }
 
 
-  function emptyCart(){
+  function checkOutCart(){
+    
+    if (validateNameBox() && validateNumberBox() && validateEmailBox() && validateAddressBox() && validateZipCodeBox() && validateCityBox()){
     const emptyArray = [];
     localStorage.setItem("productArrayInLS" , JSON.stringify(emptyArray));
+    return true;
+    }
+    return false;
 
   }
 
 
+  function validateNameBox(){
+    let inputName = document.getElementById("nameTextBox").value;
+    const regExp = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    
+    
+    if(inputName.length < 2 || !isNaN(inputName)){
+      alert("Please provide your name!");
+      return false;
+    } else if (/\d/.test(inputName) || regExp.test(inputName)){ 
+      alert("Name cannot contain numbers or special characters!");
+      return false;
+    } 
+  
+    return true;
+  }
+
+  function validateNumberBox(){
+    let inputNumber = document.getElementById("numberTextBox").value;
+    const regExp = /[a-zA-Z `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/; 
+    if(inputNumber.length < 10  ){
+      alert("Must be 10 numbers!");
+      return false;
+    } else if(regExp.test(inputNumber)){
+      alert("Cannot contain letters or special characters!");
+      return false;
+    }
+
+    return true;
+  }
+
+  
+  function validateEmailBox(){
+    let inputEmail = document.getElementById("emailBox").value;
+
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+
+    if(inputEmail.match(pattern)){
+      return true;
+    } else {
+      alert("You have entered an invalid email address!");
+      return (false);
+    }
+
+   
+  
+  }
+
+  function validateAddressBox(){
+
+    let inputNumber = document.getElementById("addressBox").value;
+    const regExp = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/; 
+    if(inputNumber.length < 2  ){
+      alert("Please provide address");
+      return false;
+    } else if(regExp.test(inputNumber)){
+      alert("Cannot contain special characters!");
+      return false;
+    }
+
+    return true;
+
+  }
+
+  function validateZipCodeBox(){
+
+    let inputNumber = document.getElementById("zipcodeBox").value;
+    const regExp = /[a-zA-Z `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/; 
+    if(inputNumber.length < 5 ){
+      alert("Please provide your zip code");
+      return false;
+    } else if(regExp.test(inputNumber)){
+      alert("Cannot contain letters or special characters!");
+      return false;
+    }
+
+    return true;
+
+  }
+
+  function validateCityBox(){
+
+    let inputName = document.getElementById("cityBox").value;
+    const regExp = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    
+    
+    if(inputName.length < 2 || !isNaN(inputName)){
+      alert("Please provide your city!");
+      return false;
+    } else if (/\d/.test(inputName) || regExp.test(inputName)){ 
+      alert("City cannot contain numbers or special characters!");
+      return false;
+    } 
+  
+    return true;
+  
+  }
+
+
+  
+ 
 
 
 
+
+  
