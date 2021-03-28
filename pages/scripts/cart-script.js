@@ -87,7 +87,7 @@ function render(){
 
   function validateNameBox(){
     let inputName = document.getElementById("nameTextBox").value;
-    const regExp = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    const regExp = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
     
     
     if(inputName.length < 2 || !isNaN(inputName)){
@@ -108,7 +108,7 @@ function render(){
       alert("Must be 10 numbers!");
       return false;
     } else if(regExp.test(inputNumber)){
-      alert("Cannot contain letters or special characters!");
+      alert("Number cannot contain letters or special characters!");
       return false;
     }
 
