@@ -73,7 +73,6 @@ function addToCart(object){
   localStorage.setItem("productArrayInLS" , JSON.stringify(productArray));
   
 
-  
   let totalProducts = document.getElementById("total-products-number").innerHTML;
   totalProducts = parseInt(totalProducts) + 1;
   document.getElementById("total-products-number").innerHTML = totalProducts;
