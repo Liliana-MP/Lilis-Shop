@@ -29,7 +29,7 @@ fetch(url).then(
            <img
              class="product-img"
              src=${element.image}
-             alt="nike air force shoe"
+             alt="shoe"
            />
 
            <button type="button" class="btn btn-primary" onclick="buttonClick(${element.id})">Add to cart</button>
